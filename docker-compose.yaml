@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: .
+    command: streamlit run frontend/app.py
+    ports:
+      - "8501:8501"
