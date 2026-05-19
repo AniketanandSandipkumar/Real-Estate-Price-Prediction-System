@@ -180,7 +180,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # API URL
 # =========================================
 
-API_URL = "http://127.0.0.1:8000/api/v1/predict"
+API_URL = "https://real-estate-price-prediction-system-9nka.onrender.com/api/v1/predict"
 
 # =========================================
 # PREDICTION
