@@ -18,7 +18,7 @@ def home():
 @router.post("/predict")
 def predict(data: PropertyInput):
 
-    prediction = predict_price(data.dict())
+    prediction = predict_price(data)
 
     logger.info(f"Prediction generated: {prediction}")
 
