@@ -167,13 +167,7 @@ with right:
         ["Apartment", "House", "Villa"]
     )
 
-    floor = st.slider("🏬 Floor", 1, 50, 2)
-
-    facing = st.selectbox(
-        "🧭 Facing",
-        ["East", "West", "North", "South"]
-    )
-
+    
 st.markdown("<br>", unsafe_allow_html=True)
 
 # =========================================
