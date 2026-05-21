@@ -32,7 +32,6 @@ st.markdown("""
 
 html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
-    color: #f8fafc !important;
 }
 
 body {
@@ -41,7 +40,7 @@ body {
 
 .main {
     background: linear-gradient(135deg, #0f172a, #111827);
-    color: #f8fafc !important;
+    color: white;
 }
 
 .block-container {
@@ -50,44 +49,17 @@ body {
     max-width: 1300px;
 }
 
-/* =========================================
-TEXT VISIBILITY FIX
-========================================= */
-
-p, span, label, div {
-    color: #f8fafc !important;
+h1, h2, h3 {
+    color: white !important;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-}
-
-.stMarkdown,
-.stText,
-.stMetric,
-.stAlert,
-.stSuccess,
-.stInfo {
-    color: #f8fafc !important;
-}
-
-/* =========================================
-CARDS
-========================================= */
 
 .hero-card {
-    background: linear-gradient(
-        135deg,
-        rgba(30,41,59,0.95),
-        rgba(15,23,42,0.92)
-    );
-    border: 1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.12));
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 35px;
     border-radius: 25px;
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-    color: white !important;
 }
 
 .metric-card {
@@ -108,12 +80,12 @@ CARDS
 .metric-value {
     font-size: 34px;
     font-weight: 700;
-    color: #38bdf8 !important;
+    color: #38bdf8;
 }
 
 .metric-label {
     font-size: 14px;
-    color: #e2e8f0 !important;
+    color: #cbd5e1;
     margin-top: 8px;
 }
 
@@ -125,34 +97,10 @@ CARDS
     backdrop-filter: blur(10px);
 }
 
-/* =========================================
-INPUTS
-========================================= */
-
-.stSlider label,
-.stSelectbox label {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-}
-
-.stSelectbox div[data-baseweb="select"] {
-    background-color: #1e293b !important;
-    border-radius: 12px !important;
-    color: white !important;
-}
-
-.stSlider div {
-    color: white !important;
-}
-
-/* =========================================
-BUTTON
-========================================= */
-
 .stButton>button {
     width: 100%;
     background: linear-gradient(90deg,#2563eb,#06b6d4);
-    color: white !important;
+    color: white;
     border-radius: 14px;
     height: 3.5em;
     border: none;
@@ -164,75 +112,20 @@ BUTTON
 .stButton>button:hover {
     transform: scale(1.02);
     background: linear-gradient(90deg,#1d4ed8,#0891b2);
-    color: white !important;
+    color: white;
 }
-
-/* =========================================
-RESULT CARD
-========================================= */
 
 .result-card {
-    background: linear-gradient(
-        135deg,
-        rgba(16,185,129,0.20),
-        rgba(6,182,212,0.15)
-    );
+    background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.1));
     padding: 30px;
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.10);
-}
-
-/* =========================================
-SUCCESS + INFO BOXES
-========================================= */
-
-.stSuccess {
-    background-color: rgba(16,185,129,0.18) !important;
-    color: #ffffff !important;
-    border-radius: 14px;
-}
-
-.stInfo {
-    background-color: rgba(30,41,59,0.85) !important;
-    color: #ffffff !important;
-    border-radius: 18px;
     border: 1px solid rgba(255,255,255,0.08);
-    padding: 18px;
 }
-
-/* =========================================
-METRICS
-========================================= */
-
-[data-testid="metric-container"] {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 20px;
-    border-radius: 20px;
-}
-
-[data-testid="metric-container"] * {
-    color: white !important;
-}
-
-/* =========================================
-FOOTER
-========================================= */
 
 .footer {
     text-align: center;
-    color: #cbd5e1 !important;
+    color: #94a3b8;
     margin-top: 40px;
-    font-size: 16px;
-}
-
-/* =========================================
-PLOTLY CHART
-========================================= */
-
-.js-plotly-plot {
-    border-radius: 20px;
-    overflow: hidden;
 }
 
 </style>
@@ -401,19 +294,10 @@ if st.button("🚀 Predict Property Price"):
             # MAIN RESULT
             # =========================================
 
-            colA, colB = st.columns(2)
-
-            with colA:
-                st.metric(
-                    "🏠 Estimated Property Price",
-                    f"₹ {predicted_price:,.0f}"
-                )
-
-            with colB:
-                st.metric(
-                    "📐 Price Per Sqft",
-                    f"₹ {predicted_price/area:,.0f}"
-                )
+            st.metric(
+                "🏠 Estimated Property Price",
+                f"₹ {predicted_price:,.0f}"
+            )
 
             # =========================================
             # VISUAL ANALYTICS
@@ -444,10 +328,7 @@ if st.button("🚀 Predict Property Price"):
 
             fig.update_layout(
                 template="plotly_dark",
-                height=500,
-                paper_bgcolor="#111827",
-                plot_bgcolor="#111827",
-                font_color="white"
+                height=500
             )
 
             st.plotly_chart(fig, use_container_width=True)
@@ -466,7 +347,7 @@ located in **{location}** has an estimated market value of:
 
 # ₹ {predicted_price:,.0f}
 
-### 🏠 Property Configuration
+### 🏡 Property Configuration
 - 📐 Area: {area} sqft
 - 🛏 Bedrooms: {bedrooms}
 - 🚿 Bathrooms: {bathrooms}
@@ -474,7 +355,6 @@ located in **{location}** has an estimated market value of:
 
 ### 🤖 AI Analysis
 The valuation is generated using:
-
 - XGBoost Machine Learning
 - Feature Engineering
 - Property Market Patterns
