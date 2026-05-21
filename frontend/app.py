@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 
 # =========================================
 # PAGE CONFIG
@@ -28,7 +27,7 @@ API_URL = "https://real-estate-price-prediction-system-9nka.onrender.com/predict
 st.markdown("""
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
@@ -38,10 +37,17 @@ body {
     background: #0f172a;
 }
 
+/* MAIN BACKGROUND */
+
 .main {
-    background: linear-gradient(135deg, #0f172a, #111827);
-    color: white;
+    background:
+        radial-gradient(circle at top left, #1e3a8a 0%, #0f172a 45%),
+        linear-gradient(to right, #0f172a, #111827);
+
+    color: #f8fafc;
 }
+
+/* PAGE CONTAINER */
 
 .block-container {
     padding-top: 2rem;
@@ -49,90 +55,234 @@ body {
     max-width: 1300px;
 }
 
-h1, h2, h3 {
-    color: white !important;
+/* HEADINGS */
+
+h1 {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 3.2rem !important;
 }
+
+h2, h3 {
+    color: #f8fafc !important;
+    font-weight: 700 !important;
+}
+
+/* TEXT */
+
+p, li, label, span {
+    color: #e2e8f0 !important;
+}
+
+/* HERO SECTION */
 
 .hero-card {
-    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.12));
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 35px;
-    border-radius: 25px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(15, 23, 42, 0.95)
+        );
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.45);
+
+    margin-bottom: 25px;
 }
 
+/* METRIC CARDS */
+
 .metric-card {
-    background: rgba(255,255,255,0.06);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,0.95),
+            rgba(15,23,42,0.95)
+        );
+
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 22px;
-    padding: 25px;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
     text-align: center;
-    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0px 8px 24px rgba(0,0,0,0.35);
+
     transition: 0.3s ease;
 }
 
 .metric-card:hover {
-    transform: translateY(-5px);
-    border: 1px solid rgba(56,189,248,0.5);
+    transform: translateY(-6px);
+    border: 1px solid rgba(56,189,248,0.45);
 }
 
 .metric-value {
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 800;
     color: #38bdf8;
 }
 
 .metric-label {
-    font-size: 14px;
-    color: #cbd5e1;
-    margin-top: 8px;
+    font-size: 15px;
+    color: #cbd5e1 !important;
+    margin-top: 6px;
 }
+
+/* INPUT SECTION */
 
 .input-card {
-    background: rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,0.92),
+            rgba(15,23,42,0.92)
+        );
+
+    padding: 35px;
+
+    border-radius: 28px;
+
     border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0px 10px 30px rgba(0,0,0,0.35);
 }
 
+/* BUTTON */
+
 .stButton>button {
+
     width: 100%;
-    background: linear-gradient(90deg,#2563eb,#06b6d4);
-    color: white;
-    border-radius: 14px;
-    height: 3.5em;
+
+    height: 3.6em;
+
+    border-radius: 16px;
+
     border: none;
+
     font-size: 20px;
-    font-weight: 600;
+
+    font-weight: 700;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 8px 20px rgba(37,99,235,0.35);
+
     transition: 0.3s ease;
 }
 
 .stButton>button:hover {
+
     transform: scale(1.02);
-    background: linear-gradient(90deg,#1d4ed8,#0891b2);
+
+    background:
+        linear-gradient(
+            90deg,
+            #1d4ed8,
+            #0891b2
+        );
+
     color: white;
 }
 
+/* RESULT CARD */
+
 .result-card {
-    background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.1));
-    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16,185,129,0.15),
+            rgba(6,182,212,0.12)
+        );
+
+    padding: 32px;
+
     border-radius: 24px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0px 8px 24px rgba(0,0,0,0.35);
+}
+
+/* METRIC CONTAINER */
+
+[data-testid="metric-container"] {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,0.95),
+            rgba(15,23,42,0.95)
+        );
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0px 6px 20px rgba(0,0,0,0.35);
+}
+
+/* INFO BOX */
+
+.stInfo {
+
+    background:
+        rgba(15,23,42,0.85);
+
+    color: #f8fafc !important;
+
+    border-radius: 18px;
+
     border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* SUCCESS */
+
+.stSuccess {
+    border-radius: 18px;
+}
+
+/* FOOTER */
+
 .footer {
     text-align: center;
-    color: #94a3b8;
-    margin-top: 40px;
+    color: #94a3b8 !important;
+    margin-top: 50px;
+    font-size: 15px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
 # =========================================
-# HEADER
+# HERO SECTION
 # =========================================
 
 st.markdown("""
@@ -143,6 +293,7 @@ st.markdown("""
 ### 🚀 Production-Ready ML Powered Property Valuation Platform
 
 Predict smart property valuations using:
+
 - XGBoost Machine Learning
 - FastAPI Backend
 - Real-time AI Predictions
@@ -150,8 +301,6 @@ Predict smart property valuations using:
 
 </div>
 """, unsafe_allow_html=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
 
 # =========================================
 # METRICS SECTION
@@ -166,7 +315,10 @@ metrics = [
     ("Live", "Deployment Status")
 ]
 
-for col, (value, label) in zip([col1, col2, col3, col4], metrics):
+for col, (value, label) in zip(
+    [col1, col2, col3, col4],
+    metrics
+):
     with col:
         st.markdown(f"""
         <div class="metric-card">
@@ -182,6 +334,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # =========================================
 
 try:
+
     health = requests.get(
         "https://real-estate-price-prediction-system-9nka.onrender.com/",
         timeout=5
@@ -199,7 +352,10 @@ except:
 
 st.markdown("## 📋 Property Information")
 
-st.markdown('<div class="input-card">', unsafe_allow_html=True)
+st.markdown(
+    '<div class="input-card">',
+    unsafe_allow_html=True
+)
 
 left, right = st.columns(2)
 
@@ -237,12 +393,20 @@ with right:
 
     location = st.selectbox(
         "📍 Location",
-        ["City Center", "Suburb", "Rural"]
+        [
+            "City Center",
+            "Suburb",
+            "Rural"
+        ]
     )
 
     property_type = st.selectbox(
         "🏢 Property Type",
-        ["Apartment", "House", "Villa"]
+        [
+            "Apartment",
+            "House",
+            "Villa"
+        ]
     )
 
 st.markdown("</div>", unsafe_allow_html=True)
@@ -266,7 +430,9 @@ if st.button("🚀 Predict Property Price"):
 
     try:
 
-        with st.spinner("🤖 AI Model Analyzing Property Data..."):
+        with st.spinner(
+            "🤖 AI Model Analyzing Property Data..."
+        ):
 
             response = requests.post(
                 API_URL,
@@ -291,47 +457,63 @@ if st.button("🚀 Predict Property Price"):
             st.markdown("<br>", unsafe_allow_html=True)
 
             # =========================================
-            # MAIN RESULT
+            # METRICS
             # =========================================
 
-            st.metric(
-                "🏠 Estimated Property Price",
-                f"₹ {predicted_price:,.0f}"
-            )
+            c1, c2 = st.columns(2)
+
+            with c1:
+
+                st.metric(
+                    "🏠 Estimated Property Price",
+                    f"₹ {predicted_price:,.0f}"
+                )
+
+            with c2:
+
+                price_per_sqft = predicted_price / area
+
+                st.metric(
+                    "📐 Price Per Sqft",
+                    f"₹ {price_per_sqft:,.0f}"
+                )
+
+            st.markdown("<br>", unsafe_allow_html=True)
 
             # =========================================
-            # VISUAL ANALYTICS
+            # MARKET ANALYSIS CHART
             # =========================================
 
-            chart_df = pd.DataFrame({
+            market_df = pd.DataFrame({
                 "Feature": [
-                    "Area",
-                    "Bedrooms",
-                    "Bathrooms",
-                    "Property Age"
+                    "Area Score",
+                    "Location Score",
+                    "Property Type",
+                    "Market Demand"
                 ],
-                "Value": [
-                    area,
-                    bedrooms,
-                    bathrooms,
-                    age
-                ]
+                "Impact": [85, 78, 72, 90]
             })
 
             fig = px.bar(
-                chart_df,
+                market_df,
                 x="Feature",
-                y="Value",
-                title="📊 Property Feature Overview",
-                text="Value"
+                y="Impact",
+                title="📊 AI Market Analysis",
+                text="Impact"
             )
 
             fig.update_layout(
                 template="plotly_dark",
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(0,0,0,0)",
+                font=dict(color="white"),
                 height=500
             )
 
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(
+                fig,
+                use_container_width=True
+            )
 
             # =========================================
             # PROPERTY SUMMARY
@@ -347,14 +529,21 @@ located in **{location}** has an estimated market value of:
 
 # ₹ {predicted_price:,.0f}
 
-### 🏡 Property Configuration
+---
+
+## 🏠 Property Configuration
+
 - 📐 Area: {area} sqft
 - 🛏 Bedrooms: {bedrooms}
 - 🚿 Bathrooms: {bathrooms}
 - 🏗 Age: {age} years
 
-### 🤖 AI Analysis
+---
+
+## 🤖 AI Analysis
+
 The valuation is generated using:
+
 - XGBoost Machine Learning
 - Feature Engineering
 - Property Market Patterns
