@@ -40,7 +40,7 @@ body {
 
 .main {
     background: linear-gradient(135deg, #0f172a, #111827);
-    color: white;
+    color:#2f6dba;
 }
 
 .block-container {
@@ -82,7 +82,7 @@ h1, h2, h3 {
 
 .hero-card p,
 .hero-card li {
-    color: #cbd5e1 !important;
+    color: #9ea6b0 !important;
     font-weight: 400;
 }
 
