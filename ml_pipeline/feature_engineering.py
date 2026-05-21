@@ -3,7 +3,7 @@ import pandas as pd
 
 def create_features(df):
 
-    df["price_per_sqft"] = df["price"] / df["area"]
+    # Safe engineered features
 
     df["property_age_score"] = 100 - df["age"]
 
