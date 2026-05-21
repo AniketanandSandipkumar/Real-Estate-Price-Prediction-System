@@ -220,16 +220,21 @@ div[role="option"] {
     color: #e2e8f0 !important;
 }
 
-/* Metric labels */
+/* =========================================
+STREAMLIT METRIC COLORS
+========================================= */
+
+/* Metric Label */
 [data-testid="stMetricLabel"] {
-    color: #cbd5e1 !important;
+    color: #94a3b8 !important;
     font-size: 18px !important;
     font-weight: 600 !important;
 }
 
-/* Metric values */
+/* Metric Value */
 [data-testid="stMetricValue"] {
-    color: #f8fafc !important;
+    color: #38bdf8 !important;
+    font-size: 42px !important;
     font-weight: 700 !important;
 }
 
@@ -357,33 +362,41 @@ METRICS
 }
 
 /* =========================================
-INFO BOX
+INFO BOX STYLING
 ========================================= */
 
-.stInfo {
-
-    background: rgba(15,23,42,0.92) !important;
-
-    border: 1px solid rgba(59,130,246,0.12) !important;
-
+div[data-testid="stInfo"] {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(56, 189, 248, 0.25) !important;
     border-radius: 20px !important;
-
-    color: #e2e8f0 !important;
+    padding: 20px !important;
 }
 
-.stInfo h1 {
-    color: #38bdf8 !important;
+/* ALL TEXT INSIDE INFO BOX */
+
+div[data-testid="stInfo"] * {
+    color: #dbeafe !important;
 }
 
-.stInfo h3 {
+/* PROPERTY SUMMARY HEADING */
+
+div[data-testid="stInfo"] h3 {
     color: #93c5fd !important;
+    font-weight: 700 !important;
 }
 
-.stInfo p,
-.stInfo li {
-    color: #cbd5e1 !important;
+/* PRICE COLOR */
+
+div[data-testid="stInfo"] h1 {
+    color: #38bdf8 !important;
+    font-weight: 800 !important;
 }
 
+/* BOLD TEXT */
+
+div[data-testid="stInfo"] strong {
+    color: #7dd3fc !important;
+}
 /* =========================================
 SUCCESS / ERROR ALERTS
 ========================================= */
