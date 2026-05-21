@@ -645,150 +645,150 @@ if st.button("🚀 Predict Property Price"):
 
             st.plotly_chart(fig, use_container_width=True)
 
+                        # =========================================
+                        # PROPERTY SUMMARY
+                        # =========================================
+            
+                       st.markdown("""
+            <h2 style="
+                color:#93c5fd;
+                margin-top:10px;
+                margin-bottom:18px;
+                font-weight:700;
+            ">
+            🧠 AI Property Insights
+            </h2>
+            """, unsafe_allow_html=True)
+            
+            st.markdown(f"""
+            <div style="
+                background: linear-gradient(
+                    135deg,
+                    rgba(15,23,42,0.92),
+                    rgba(30,41,59,0.88)
+                );
+                padding: 32px;
+                border-radius: 24px;
+                border: 1px solid rgba(59,130,246,0.22);
+                box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+            ">
+            
+            <h3 style="
+                color:#60a5fa;
+                font-size:28px;
+                margin-bottom:18px;
+                font-weight:700;
+            ">
+            📌 Property Summary
+            </h3>
+            
+            <p style="
+                color:#cbd5e1;
+                font-size:18px;
+                line-height:1.9;
+                margin-bottom:10px;
+            ">
+            The AI model predicts that this
+            <span style="color:#dbeafe;font-weight:600;">
+            {property_type}
+            </span>
+            located in
+            <span style="color:#dbeafe;font-weight:600;">
+            {location}
+            </span>
+            has an estimated market value of:
+            </p>
+            
+            <h1 style="
+                color:#2563eb;
+                font-size:54px;
+                font-weight:800;
+                margin-top:18px;
+                margin-bottom:28px;
+                letter-spacing:-1px;
+            ">
+            ₹ {predicted_price:,.0f}
+            </h1>
+            
+            <h3 style="
+                color:#93c5fd;
+                margin-bottom:16px;
+                font-size:24px;
+            ">
+            🏡 Property Configuration
+            </h3>
+            
+            <ul style="
+                color:#cbd5e1;
+                font-size:17px;
+                line-height:2;
+                padding-left:22px;
+            ">
+            <li>📐 Area: {area} sqft</li>
+            <li>🛏 Bedrooms: {bedrooms}</li>
+            <li>🚿 Bathrooms: {bathrooms}</li>
+            <li>🏗 Age: {age} years</li>
+            </ul>
+            
+            <h3 style="
+                color:#93c5fd;
+                margin-top:24px;
+                margin-bottom:16px;
+                font-size:24px;
+            ">
+            🤖 AI Analysis
+            </h3>
+            
+            <ul style="
+                color:#cbd5e1;
+                font-size:17px;
+                line-height:2;
+                padding-left:22px;
+            ">
+            <li>XGBoost Machine Learning</li>
+            <li>Feature Engineering</li>
+            <li>Property Market Patterns</li>
+            <li>Location Intelligence</li>
+            <li>Historical Pricing Trends</li>
+            </ul>
+            
+            </div>
+            """, unsafe_allow_html=True)
+                    else:
+            
+                        st.error(f"""
+            ❌ API Error
+            
+            Status Code: {response.status_code}
+            
+            Response:
+            {response.text}
+            """)
+            
+                except Exception as e:
+            
+                    st.error(f"""
+            ⚠️ Backend Connection Failed
+            
+            Error:
+            {e}
+            """)
+            
             # =========================================
-            # PROPERTY SUMMARY
+            # FOOTER
             # =========================================
-
-           st.markdown("""
-<h2 style="
-    color:#93c5fd;
-    margin-top:10px;
-    margin-bottom:18px;
-    font-weight:700;
-">
-🧠 AI Property Insights
-</h2>
-""", unsafe_allow_html=True)
-
-st.markdown(f"""
-<div style="
-    background: linear-gradient(
-        135deg,
-        rgba(15,23,42,0.92),
-        rgba(30,41,59,0.88)
-    );
-    padding: 32px;
-    border-radius: 24px;
-    border: 1px solid rgba(59,130,246,0.22);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-">
-
-<h3 style="
-    color:#60a5fa;
-    font-size:28px;
-    margin-bottom:18px;
-    font-weight:700;
-">
-📌 Property Summary
-</h3>
-
-<p style="
-    color:#cbd5e1;
-    font-size:18px;
-    line-height:1.9;
-    margin-bottom:10px;
-">
-The AI model predicts that this
-<span style="color:#dbeafe;font-weight:600;">
-{property_type}
-</span>
-located in
-<span style="color:#dbeafe;font-weight:600;">
-{location}
-</span>
-has an estimated market value of:
-</p>
-
-<h1 style="
-    color:#2563eb;
-    font-size:54px;
-    font-weight:800;
-    margin-top:18px;
-    margin-bottom:28px;
-    letter-spacing:-1px;
-">
-₹ {predicted_price:,.0f}
-</h1>
-
-<h3 style="
-    color:#93c5fd;
-    margin-bottom:16px;
-    font-size:24px;
-">
-🏡 Property Configuration
-</h3>
-
-<ul style="
-    color:#cbd5e1;
-    font-size:17px;
-    line-height:2;
-    padding-left:22px;
-">
-<li>📐 Area: {area} sqft</li>
-<li>🛏 Bedrooms: {bedrooms}</li>
-<li>🚿 Bathrooms: {bathrooms}</li>
-<li>🏗 Age: {age} years</li>
-</ul>
-
-<h3 style="
-    color:#93c5fd;
-    margin-top:24px;
-    margin-bottom:16px;
-    font-size:24px;
-">
-🤖 AI Analysis
-</h3>
-
-<ul style="
-    color:#cbd5e1;
-    font-size:17px;
-    line-height:2;
-    padding-left:22px;
-">
-<li>XGBoost Machine Learning</li>
-<li>Feature Engineering</li>
-<li>Property Market Patterns</li>
-<li>Location Intelligence</li>
-<li>Historical Pricing Trends</li>
-</ul>
-
-</div>
-""", unsafe_allow_html=True)
-        else:
-
-            st.error(f"""
-❌ API Error
-
-Status Code: {response.status_code}
-
-Response:
-{response.text}
-""")
-
-    except Exception as e:
-
-        st.error(f"""
-⚠️ Backend Connection Failed
-
-Error:
-{e}
-""")
-
-# =========================================
-# FOOTER
-# =========================================
-
-st.markdown("""
-<div class="footer">
-
----
-
-### 💼 Production-Grade AI Real Estate System
-
-Built using:
-FastAPI • Streamlit • XGBoost • Plotly • Scikit-Learn • Pandas
-
-Designed & Developed for Modern ML Deployment 🚀
-
-</div>
-""", unsafe_allow_html=True)
+            
+            st.markdown("""
+            <div class="footer">
+            
+            ---
+            
+            ### 💼 Production-Grade AI Real Estate System
+            
+            Built using:
+            FastAPI • Streamlit • XGBoost • Plotly • Scikit-Learn • Pandas
+            
+            Designed & Developed for Modern ML Deployment 🚀
+            
+            </div>
+            """, unsafe_allow_html=True)
