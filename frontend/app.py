@@ -649,7 +649,7 @@ if st.button("🚀 Predict Property Price"):
                         # PROPERTY SUMMARY
                         # =========================================
             
-                       st.markdown("""
+            st.markdown("""
             <h2 style="
                 color:#93c5fd;
                 margin-top:10px;
@@ -660,7 +660,7 @@ if st.button("🚀 Predict Property Price"):
             </h2>
             """, unsafe_allow_html=True)
             
-            st.markdown(f"""
+            s st.markdown(f"""
             <div style="
                 background: linear-gradient(
                     135deg,
@@ -672,7 +672,7 @@ if st.button("🚀 Predict Property Price"):
                 border: 1px solid rgba(59,130,246,0.22);
                 box-shadow: 0 10px 40px rgba(0,0,0,0.35);
             ">
-            
+
             <h3 style="
                 color:#60a5fa;
                 font-size:28px;
@@ -681,7 +681,7 @@ if st.button("🚀 Predict Property Price"):
             ">
             📌 Property Summary
             </h3>
-            
+
             <p style="
                 color:#cbd5e1;
                 font-size:18px;
@@ -698,7 +698,7 @@ if st.button("🚀 Predict Property Price"):
             </span>
             has an estimated market value of:
             </p>
-            
+
             <h1 style="
                 color:#2563eb;
                 font-size:54px;
@@ -709,7 +709,7 @@ if st.button("🚀 Predict Property Price"):
             ">
             ₹ {predicted_price:,.0f}
             </h1>
-            
+
             <h3 style="
                 color:#93c5fd;
                 margin-bottom:16px;
@@ -717,7 +717,7 @@ if st.button("🚀 Predict Property Price"):
             ">
             🏡 Property Configuration
             </h3>
-            
+
             <ul style="
                 color:#cbd5e1;
                 font-size:17px;
@@ -729,7 +729,7 @@ if st.button("🚀 Predict Property Price"):
             <li>🚿 Bathrooms: {bathrooms}</li>
             <li>🏗 Age: {age} years</li>
             </ul>
-            
+
             <h3 style="
                 color:#93c5fd;
                 margin-top:24px;
@@ -738,7 +738,7 @@ if st.button("🚀 Predict Property Price"):
             ">
             🤖 AI Analysis
             </h3>
-            
+
             <ul style="
                 color:#cbd5e1;
                 font-size:17px;
@@ -751,44 +751,45 @@ if st.button("🚀 Predict Property Price"):
             <li>Location Intelligence</li>
             <li>Historical Pricing Trends</li>
             </ul>
-            
+
             </div>
             """, unsafe_allow_html=True)
-                    else:
-            
-                        st.error(f"""
-            ❌ API Error
-            
-            Status Code: {response.status_code}
-            
-            Response:
-            {response.text}
-            """)
-            
-                except Exception as e:
-            
-                    st.error(f"""
-            ⚠️ Backend Connection Failed
-            
-            Error:
-            {e}
-            """)
-            
-            # =========================================
-            # FOOTER
-            # =========================================
-            
-            st.markdown("""
-            <div class="footer">
-            
-            ---
-            
-            ### 💼 Production-Grade AI Real Estate System
-            
-            Built using:
-            FastAPI • Streamlit • XGBoost • Plotly • Scikit-Learn • Pandas
-            
-            Designed & Developed for Modern ML Deployment 🚀
-            
-            </div>
-            """, unsafe_allow_html=True)
+
+        else:
+
+            st.error(f"""
+❌ API Error
+
+Status Code: {response.status_code}
+
+Response:
+{response.text}
+""")
+
+    except Exception as e:
+
+        st.error(f"""
+⚠️ Backend Connection Failed
+
+Error:
+{e}
+""")
+
+# =========================================
+# FOOTER
+# =========================================
+
+st.markdown("""
+<div class="footer">
+
+---
+
+### 💼 Production-Grade AI Real Estate System
+
+Built using:
+FastAPI • Streamlit • XGBoost • Plotly • Scikit-Learn • Pandas
+
+Designed & Developed for Modern ML Deployment 🚀
+
+</div>
+""", unsafe_allow_html=True)
