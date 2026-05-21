@@ -50,7 +50,24 @@ body {
 }
 
 h1, h2, h3 {
-    color: white !important;
+    color: #f8fafc !important;
+}
+
+/* HERO CARD HEADING COLORS */
+
+.hero-card h1 {
+    color: #dbeafe !important;
+    font-weight: 700;
+}
+
+.hero-card h3 {
+    color: #cbd5e1 !important;
+    font-weight: 500;
+}
+
+.hero-card p,
+.hero-card li {
+    color: #e2e8f0 !important;
 }
 
 .hero-card {
