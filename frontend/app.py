@@ -55,13 +55,12 @@ h1, h2, h3 {
 
 /* HERO CARD HEADING COLORS */
 .hero-card {
-    background: linear-gradient(
-        135deg,
-        rgba(15,23,42,0.96),
-        rgba(30,41,59,0.92)
-    );
-    border: 1px solid rgba(148,163,184,0.12);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.12));
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 35px;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
 }
 
 /* MAIN TITLE */
