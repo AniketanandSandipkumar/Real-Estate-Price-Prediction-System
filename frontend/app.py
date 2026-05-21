@@ -660,7 +660,7 @@ if st.button("🚀 Predict Property Price"):
             </h2>
             """, unsafe_allow_html=True)
             
-            s st.markdown(f"""
+            st.markdown(f"""
             <div style="
                 background: linear-gradient(
                     135deg,
