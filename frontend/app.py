@@ -30,18 +30,30 @@ st.markdown("""
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* =========================================
+GLOBAL
+========================================= */
+
 html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
+    color: #e2e8f0;
 }
 
 body {
-    background: #0f172a;
+    background: #020617;
 }
 
+/* MAIN APP */
+
 .main {
-    background: linear-gradient(135deg, #0f172a, #111827);
-    color:#2f6dba;
+    background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(6,182,212,0.10), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a, #111827);
+    color: #e2e8f0;
 }
+
+/* CONTENT WIDTH */
 
 .block-container {
     padding-top: 2rem;
@@ -49,56 +61,100 @@ body {
     max-width: 1300px;
 }
 
-h1, h2, h3 {
-    color:  #93c5fd !important;
+/* =========================================
+HEADINGS
+========================================= */
+
+h1 {
+    color: #dbeafe !important;
+    font-weight: 700 !important;
 }
 
-/* HERO CARD HEADING COLORS */
+h2 {
+    color: #bfdbfe !important;
+    font-weight: 600 !important;
+}
+
+h3 {
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+}
+
+p, li, label, span {
+    color: #cbd5e1 !important;
+}
+
+/* =========================================
+HERO SECTION
+========================================= */
+
 .hero-card {
-    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.12));
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 35px;
-    border-radius: 25px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,23,42,0.96),
+            rgba(30,41,59,0.92)
+        );
+
+    border: 1px solid rgba(148,163,184,0.12);
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(255,255,255,0.02);
 }
 
-/* MAIN TITLE */
+/* HERO TEXT */
 
 .hero-card h1 {
     color: #93c5fd !important;
-    font-weight: 700;
     letter-spacing: -1px;
 }
 
-/* SUBTITLE */
-
 .hero-card h3 {
     color: #94a3b8 !important;
-    font-weight: 500;
 }
-
-/* NORMAL TEXT */
 
 .hero-card p,
 .hero-card li {
-    color: #9ea6b0 !important;
-    font-weight: 400;
+    color: #cbd5e1 !important;
 }
 
+/* =========================================
+METRIC CARDS
+========================================= */
+
 .metric-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 22px;
-    padding: 25px;
+    background: rgba(15,23,42,0.82);
+
+    border: 1px solid rgba(148,163,184,0.10);
+
+    border-radius: 24px;
+
+    padding: 28px;
+
     text-align: center;
-    backdrop-filter: blur(10px);
-    transition: 0.3s ease;
+
+    backdrop-filter: blur(12px);
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 6px 24px rgba(0,0,0,0.28);
 }
 
 .metric-card:hover {
-    transform: translateY(-5px);
-    border: 1px solid rgba(56,189,248,0.5);
+    transform: translateY(-6px);
+
+    border: 1px solid rgba(59,130,246,0.40);
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,0.15);
 }
 
 .metric-value {
@@ -109,65 +165,216 @@ h1, h2, h3 {
 
 .metric-label {
     font-size: 14px;
-    color: #cbd5e1;
+    color: #94a3b8 !important;
     margin-top: 8px;
 }
 
-.input-card {
-    background: rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-}
-
-.stButton>button {
-    width: 100%;
-    background: linear-gradient(90deg,#2563eb,#06b6d4);
-    color: white;
-    border-radius: 14px;
-    height: 3.5em;
-    border: none;
-    font-size: 20px;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.stButton>button:hover {
-    transform: scale(1.02);
-    background: linear-gradient(90deg,#1d4ed8,#0891b2);
-    color: white;
-}
-
-.result-card {
-    background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.1));
-    padding: 30px;
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
 /* =========================================
-PREMIUM FOOTER
+INPUT SECTION
 ========================================= */
 
-.footer {
-    text-align: center;
-    margin-top: 45px;
-    padding-top: 20px;
-    color: #64748b !important;
-    font-size: 15px;
+.input-card {
+    background: rgba(15,23,42,0.80);
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(148,163,184,0.10);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.30);
+}
+
+/* SLIDER LABELS */
+
+.stSlider label,
+.stSelectbox label {
+    color: #cbd5e1 !important;
     font-weight: 500;
 }
 
-/* FOOTER HEADINGS */
+/* SLIDER VALUES */
+
+.stSlider div[data-baseweb="slider"] {
+    color: #e2e8f0 !important;
+}
+
+/* SELECTBOX */
+
+.stSelectbox div[data-baseweb="select"] {
+    background-color: #0f172a !important;
+    color: #e2e8f0 !important;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.stButton > button {
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #0891b2
+        );
+
+    color: white !important;
+
+    border-radius: 16px;
+
+    height: 3.6em;
+
+    border: none;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(37,99,235,0.25);
+}
+
+.stButton > button:hover {
+
+    transform: scale(1.02);
+
+    background:
+        linear-gradient(
+            90deg,
+            #1d4ed8,
+            #0e7490
+        );
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,0.35);
+}
+
+/* =========================================
+SUCCESS CARD
+========================================= */
+
+.result-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16,185,129,0.12),
+            rgba(6,182,212,0.08)
+        );
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(16,185,129,0.18);
+
+    box-shadow:
+        0 8px 28px rgba(0,0,0,0.25);
+}
+
+.result-card h2 {
+    color: #86efac !important;
+}
+
+/* =========================================
+METRICS
+========================================= */
+
+[data-testid="metric-container"] {
+
+    background: rgba(15,23,42,0.82);
+
+    border: 1px solid rgba(148,163,184,0.10);
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.25);
+}
+
+[data-testid="metric-container"] label {
+    color: #94a3b8 !important;
+}
+
+[data-testid="metric-container"] div {
+    color: #f8fafc !important;
+}
+
+/* =========================================
+INFO BOX
+========================================= */
+
+.stInfo {
+
+    background: rgba(15,23,42,0.92) !important;
+
+    border: 1px solid rgba(59,130,246,0.12) !important;
+
+    border-radius: 20px !important;
+
+    color: #e2e8f0 !important;
+}
+
+.stInfo h1 {
+    color: #38bdf8 !important;
+}
+
+.stInfo h3 {
+    color: #93c5fd !important;
+}
+
+.stInfo p,
+.stInfo li {
+    color: #cbd5e1 !important;
+}
+
+/* =========================================
+SUCCESS / ERROR ALERTS
+========================================= */
+
+.stSuccess {
+    background-color: rgba(16,185,129,0.15) !important;
+    color: #86efac !important;
+}
+
+.stError {
+    background-color: rgba(239,68,68,0.15) !important;
+    color: #fca5a5 !important;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 45px;
+
+    padding-top: 20px;
+
+    color: #64748b !important;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
 
 .footer h3,
 .footer h4 {
     color: #94a3b8 !important;
-    font-weight: 600;
 }
-
-/* FOOTER NORMAL TEXT */
 
 .footer p,
 .footer span {
