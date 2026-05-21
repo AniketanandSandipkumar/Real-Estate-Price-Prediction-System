@@ -233,7 +233,7 @@ STREAMLIT METRIC COLORS
 
 /* Metric Value */
 [data-testid="stMetricValue"] {
-    color: #1880ad !important;
+    color: #38bdf8 !important;
     font-size: 42px !important;
     font-weight: 700 !important;
 }
@@ -388,7 +388,7 @@ div[data-testid="stInfo"] h3 {
 /* PRICE COLOR */
 
 div[data-testid="stInfo"] h1 {
-    color: #38bdf8 !important;
+    color: #1880ad !important;
     font-weight: 800 !important;
 }
 
