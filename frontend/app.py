@@ -195,8 +195,6 @@ if st.button("🚀 Predict Property Price"):
         "age": age,
         "location": location,
         "property_type": property_type,
-        "floor": floor,
-        "facing": facing
     }
 
     try:
