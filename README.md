@@ -289,13 +289,13 @@ Interactive feature overview chart.
 # 🖼️ Project Preview
 
 ## 🏠 Main Dashboard
-![Dashboard](dashboard.png)
-
-## 📊 Analytics Overview
-![Analytics](analytics.png)
+![Dashboard](KPI.png)
 
 ## 🤖 Prediction Output
 ![Prediction](prediction.png)
+
+## 📊 Analytics Overview
+![Analytics](Analysis.png)
 
 ---
 
