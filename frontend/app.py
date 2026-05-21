@@ -54,27 +54,37 @@ h1, h2, h3 {
 }
 
 /* HERO CARD HEADING COLORS */
+.hero-card {
+    background: linear-gradient(
+        135deg,
+        rgba(15,23,42,0.96),
+        rgba(30,41,59,0.92)
+    );
+    border: 1px solid rgba(148,163,184,0.12);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+}
+
+/* MAIN TITLE */
 
 .hero-card h1 {
-    color: #bfdbfe !important;
+    color: #93c5fd !important;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
+
+/* SUBTITLE */
 
 .hero-card h3 {
     color: #94a3b8 !important;
+    font-weight: 500;
 }
+
+/* NORMAL TEXT */
 
 .hero-card p,
 .hero-card li {
     color: #cbd5e1 !important;
-}
-
-.hero-card {
-    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.12));
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 35px;
-    border-radius: 25px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    font-weight: 400;
 }
 
 .metric-card {
@@ -137,10 +147,32 @@ h1, h2, h3 {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* =========================================
+PREMIUM FOOTER
+========================================= */
+
 .footer {
     text-align: center;
-    color: #94a3b8;
-    margin-top: 40px;
+    margin-top: 45px;
+    padding-top: 20px;
+    color: #64748b !important;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* FOOTER HEADINGS */
+
+.footer h3,
+.footer h4 {
+    color: #94a3b8 !important;
+    font-weight: 600;
+}
+
+/* FOOTER NORMAL TEXT */
+
+.footer p,
+.footer span {
+    color: #64748b !important;
 }
 
 </style>
