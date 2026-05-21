@@ -366,7 +366,7 @@ INFO BOX STYLING
 ========================================= */
 
 div[data-testid="stInfo"] {
-    background: rgba(15, 23, 42, 0.85) !important;
+    background: #bed1ed !important;
     border: 1px solid rgba(56, 189, 248, 0.25) !important;
     border-radius: 20px !important;
     padding: 20px !important;
