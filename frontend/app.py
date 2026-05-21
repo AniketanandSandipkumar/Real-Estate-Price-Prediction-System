@@ -50,7 +50,7 @@ body {
 }
 
 h1, h2, h3 {
-    color: #f8fafc !important;
+    color:  #93c5fd !important;
 }
 
 /* HERO CARD HEADING COLORS */
