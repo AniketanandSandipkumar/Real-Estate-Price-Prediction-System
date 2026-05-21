@@ -170,45 +170,91 @@ METRIC CARDS
 }
 
 /* =========================================
-INPUT SECTION
+FORM LABELS & INPUT TEXT
 ========================================= */
 
-.input-card {
-    background: rgba(15,23,42,0.80);
-
-    padding: 35px;
-
-    border-radius: 28px;
-
-    border: 1px solid rgba(148,163,184,0.10);
-
-    backdrop-filter: blur(14px);
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.30);
+/* Section Heading */
+h2 {
+    color: #e2e8f0 !important;
 }
 
-/* SLIDER LABELS */
-
+/* Labels like Area, Bedrooms, etc */
+label, 
+.stSelectbox label,
 .stSlider label,
-.stSelectbox label {
+.stNumberInput label {
+    color: #f1f5f9 !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+
+/* Slider min/max values */
+.stSlider div[data-baseweb="slider"] span {
     color: #cbd5e1 !important;
-    font-weight: 500;
+    font-weight: 500 !important;
 }
 
-/* SLIDER VALUES */
-
-.stSlider div[data-baseweb="slider"] {
-    color: #e2e8f0 !important;
+/* Dropdown selected text */
+.stSelectbox div[data-baseweb="select"] > div {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-radius: 12px !important;
+    border: 1px solid #334155 !important;
 }
 
-/* SELECTBOX */
-
-.stSelectbox div[data-baseweb="select"] {
+/* Dropdown menu */
+div[role="listbox"] {
     background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+/* Dropdown options */
+div[role="option"] {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+/* Input card heading */
+.input-card h2,
+.input-card h3 {
     color: #e2e8f0 !important;
 }
 
+/* Metric labels */
+[data-testid="stMetricLabel"] {
+    color: #cbd5e1 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+/* Metric values */
+[data-testid="stMetricValue"] {
+    color: #f8fafc !important;
+    font-weight: 700 !important;
+}
+
+/* Success message */
+.stSuccess {
+    background-color: rgba(16,185,129,0.15) !important;
+    color: #d1fae5 !important;
+    border: 1px solid rgba(16,185,129,0.4) !important;
+}
+
+/* Info box */
+.stInfo {
+    background-color: rgba(30,41,59,0.85) !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(59,130,246,0.25) !important;
+}
+
+/* Markdown text inside info */
+.stInfo p,
+.stInfo li,
+.stInfo h1,
+.stInfo h2,
+.stInfo h3 {
+    color: #f8fafc !important;
+}
 /* =========================================
 BUTTON
 ========================================= */
