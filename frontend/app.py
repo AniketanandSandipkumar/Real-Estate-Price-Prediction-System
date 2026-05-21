@@ -388,7 +388,7 @@ div[data-testid="stInfo"] h3 {
 /* PRICE COLOR */
 
 div[data-testid="stInfo"] h1 {
-    color: #1880ad !important;
+    color: #25508f !important;
     font-weight: 800 !important;
 }
 
