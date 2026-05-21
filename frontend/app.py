@@ -56,18 +56,16 @@ h1, h2, h3 {
 /* HERO CARD HEADING COLORS */
 
 .hero-card h1 {
-    color: #dbeafe !important;
-    font-weight: 700;
+    color: #bfdbfe !important;
 }
 
 .hero-card h3 {
-    color: #cbd5e1 !important;
-    font-weight: 500;
+    color: #94a3b8 !important;
 }
 
 .hero-card p,
 .hero-card li {
-    color: #e2e8f0 !important;
+    color: #cbd5e1 !important;
 }
 
 .hero-card {
